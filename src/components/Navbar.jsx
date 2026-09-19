@@ -8,7 +8,7 @@ export default function Navbar({ cartCount, searchText, onSearchChange }) {
       </button>
 
       <div
-        className="collapse navbar-collapse container-fluid d-flex align-items-center justify-content-between"
+        className="collapse navbar-collapse container-fluid  align-items-center justify-content-between"
         id="navbarContent"
       >
         <a className="navbar-brand" href="https://www.shopindia.com" target="_blank" rel="noreferrer">

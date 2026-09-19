@@ -3,14 +3,19 @@ import { useState } from 'react'
 export default function Navbar({ cartCount, searchText, onSearchChange }) {
   return (
     <nav className="navbar navbar-expand-lg">
-      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span className="navbar-toggler-icon"></span>
-      </button>
+      <div className="navbar-top-row">
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarContent"
+          aria-controls="navbarContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
 
-      <div
-        className="collapse navbar-collapse container-fluid  align-items-center justify-content-between"
-        id="navbarContent"
-      >
         <a className="navbar-brand" href="https://www.shopindia.com" target="_blank" rel="noreferrer">
           <div className="shopindia-logo-img">
             <svg viewBox="0 0 500 150" xmlns="http://www.w3.org/2000/svg">
@@ -87,21 +92,47 @@ export default function Navbar({ cartCount, searchText, onSearchChange }) {
           </div>
         </a>
 
-        <form className="search-bar mx-3 flex-grow-1" role="search">
-          <input
-            type="search"
-            id="search"
-            placeholder="Search Shop India.in"
-            aria-label="Search"
-            value={searchText}
-            onChange={(e) => onSearchChange(e.target.value)}
-          />
-          <button type="submit">
-            <i className="bi bi-search"></i>
-          </button>
-        </form>
+        <div className="cart navbar-top-cart">
+          <a href="#" className="text-white d-flex align-items-center">
+            <i className="bi bi-cart-fill fs-4 me-1"></i>
+            <span
+              className="cart-count"
+              style={{
+                background: 'red',
+                color: 'white',
+                borderRadius: '50%',
+                width: '22px',
+                height: '22px',
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '12px',
+                fontWeight: 'bold',
+                marginLeft: '4px',
+              }}
+            >
+              {cartCount}
+            </span>
+          </a>
+        </div>
+      </div>
 
-        <div className="d-flex align-items-center ms-auto">
+      <form className="search-bar-row" role="search">
+        <input
+          type="search"
+          id="search"
+          placeholder="Search Shop India.in"
+          aria-label="Search"
+          value={searchText}
+          onChange={(e) => onSearchChange(e.target.value)}
+        />
+        <button type="submit">
+          <i className="bi bi-search"></i>
+        </button>
+      </form>
+
+      <div className="collapse navbar-collapse" id="navbarContent">
+        <div className="mobile-menu-items">
           <div className="language-selector me-2">
             <img src="https://flagcdn.com/w32/in.png" alt="India Flag" className="flag-logo" />
             <button className="dropdown-btn">IN EN</button>
@@ -137,7 +168,7 @@ export default function Navbar({ cartCount, searchText, onSearchChange }) {
                 <br />
                 <strong>Account & Lists</strong>
               </button>
-              <ul className="dropdown-menu p-3" aria-labelledby="accountDropdown" style={{ minWidth: '420px' }}>
+              <ul className="dropdown-menu p-3" aria-labelledby="accountDropdown" style={{ minWidth: '280px' }}>
                 <div className="text-center mb-3">
                   <button className="btn btn-warning fw-bold">Sign in</button>
                   <br />
@@ -178,31 +209,6 @@ export default function Navbar({ cartCount, searchText, onSearchChange }) {
               <small>Returns</small>
               <br />
               <strong>& Orders</strong>
-            </a>
-          </div>
-
-          <div className="cart ms-2">
-            <a href="#" className="text-white d-flex align-items-center">
-              <i className="bi bi-cart-fill fs-4 me-1"></i>
-              <strong>Cart</strong>
-              <span
-                className="cart-count"
-                style={{
-                  background: 'red',
-                  color: 'white',
-                  borderRadius: '50%',
-                  width: '22px',
-                  height: '22px',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: '12px',
-                  fontWeight: 'bold',
-                  marginLeft: '8px',
-                }}
-              >
-                {cartCount}
-              </span>
             </a>
           </div>
         </div>

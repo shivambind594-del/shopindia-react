@@ -1,154 +1,1000 @@
-/* ============================================
-   ROUNDED PILL SEARCH BAR (mobile only)
-   ============================================ */
-@media (max-width: 767.98px) {
-  .search-bar-row {
-    background-color: #f0f2f2;
-    border-radius: 24px;
-    padding: 4px;
-  }
+html {
+  scroll-behavior: smooth;
+}
 
-  .search-bar-row input {
-    background-color: transparent;
-    border-radius: 24px 0 0 24px;
-    padding-left: 16px;
-  }
+body {
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-height: 100vh;
+  background-color: #eaeded;
+  font-size: 14px;
+}
 
-  .search-bar-row button {
-    background-color: transparent;
-    color: #555;
-    border-radius: 0 24px 24px 0;
-  }
-
-  /* Delivery location as a pill under the top row */
-  .navbar .delivery-info {
-    display: flex !important;
-    flex-direction: row;
-    align-items: center;
-    gap: 6px;
-    color: #fff;
-    background-color: rgba(255, 255, 255, 0.08);
-    border-radius: 20px;
-    padding: 6px 12px;
-    margin-top: 8px;
-    width: fit-content;
-    font-size: 12px;
-  }
-
-  .navbar .delivery-info small {
-    display: none;
-  }
-
-  .navbar .delivery-info span {
-    font-size: 12px;
-  }
+.page-content {
+  padding-bottom: 40px;
 }
 
 /* ============================================
-   FILTER BUTTONS AS COLORFUL ICON TILES (mobile only)
+   FILTER SECTION - Mobile optimized
    ============================================ */
-@media (max-width: 767.98px) {
-  .filter-buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+.filter-section {
+  padding: 12px 12px;
+  background-color: #fff;
+  margin-bottom: 8px;
+}
+
+.filter-section h4 {
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #0f1111;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  border: 1px solid #ccc;
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.filter-btn:hover {
+  background: #f2f2f2;
+}
+
+.filter-btn.active {
+  background: #232f3e;
+  color: #fff;
+  border-color: #232f3e;
+}
+
+/* ============================================
+   CAROUSEL - Mobile optimized heights
+   ============================================ */
+.carousel-item img {
+  height: 120px;
+  object-fit: cover;
+  width: 100%;
+  display: block;
+}
+
+/* ============================================
+   PRODUCT CARDS ROW - Mobile-first
+   ============================================ */
+.card-row {
+  display: flex;
+  gap: 8px;
+  padding: 0 12px;
+  margin-top: -30px;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 2;
+  flex-wrap: wrap;
+}
+
+.product-card {
+  flex: 1 1 100%;
+  background-color: #fff;
+  padding: 12px;
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  transition: opacity 0.3s ease;
+  border-radius: 2px;
+}
+
+.product-card h2 {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: #0f1111;
+  line-height: 1.3;
+}
+
+.card-single-image img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 2px;
+  display: block;
+}
+
+.card-grid-2x2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  flex: 1;
+}
+
+.mini-card {
+  text-align: left;
+  cursor: pointer;
+}
+
+.mini-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 2px;
+  display: block;
+}
+
+.mini-card span {
+  display: block;
+  font-size: 11px;
+  color: #0f1111;
+  margin-top: 4px;
+  line-height: 1.2;
+}
+
+.mini-card:hover span {
+  color: #c7511f;
+}
+
+.see-more {
+  color: #007185;
+  text-decoration: none;
+  font-size: 11px;
+  margin-top: auto;
+  padding-top: 8px;
+  display: inline-block;
+}
+
+.see-more:hover {
+  color: #c7511f;
+  text-decoration: underline;
+}
+
+/* ============================================
+   FOOTER - Mobile optimized
+   ============================================ */
+.shopindia-footer {
+  background-color: #232f3e;
+  color: #fff;
+  margin-top: 24px;
+}
+
+.footer-back-top {
+  background-color: #37475a;
+  text-align: center;
+  padding: 12px 0;
+  cursor: pointer;
+}
+
+.footer-back-top:hover {
+  background-color: #485769;
+}
+
+.footer-back-top a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 12px;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.footer-column h4 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column li {
+  margin-bottom: 6px;
+}
+
+.footer-column a {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.footer-column a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  background-color: #131a22;
+  text-align: center;
+  padding: 16px 12px;
+  font-size: 11px;
+  color: #999;
+}
+
+/* ============================================
+   NAVBAR - Mobile-first flexible layout
+   ============================================ */
+.navbar {
+  background-color: #232f3e;
+  width: 100%;
+  height: auto;
+  min-height: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 8px 12px;
+  margin: 0;
+  position: relative;
+  overflow: visible;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+.container-fluid {
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100%;
+  position: relative;
+  overflow: visible;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Logo + Delivery (unified hover) */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 0;
+  padding: 4px 8px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  min-width: fit-content;
+}
+
+.navbar-brand:hover {
+  border: 1px solid #fff;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+.shopindia-logo-img {
+  height: 50px;
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+}
+
+.shopindia-logo-img svg {
+  height: 100%;
+  width: 100%;
+  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.3));
+}
+
+.delivery-info {
+  line-height: 1.2;
+  color: #fff;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.delivery-info small {
+  color: #ccc;
+  font-size: 10px;
+}
+
+.delivery-info span {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  min-width: 120px;
+  order: 3;
+  flex-basis: 100%;
+}
+
+.d-flex.align-items-center.ms-auto {
+  gap: 4px;
+  margin-left: auto !important;
+  margin-right: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  flex-basis: auto;
+  order: 2;
+}
+
+.search-bar input {
+  flex: 1;
+  height: 32px;
+  border: none;
+  padding: 0 10px;
+  border-radius: 4px 0 0 4px;
+  font-size: 12px;
+  min-width: 100px;
+}
+
+.search-bar button {
+  height: 32px;
+  background-color: #febd69;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  padding: 0 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.language-selector {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.language-selector:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
+}
+
+.language-selector img {
+  height: 18px;
+  width: 24px;
+  border-radius: 2px;
+}
+
+.dropdown-btn {
+  background-color: #232f3e;
+  color: white;
+  padding: 6px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 200px;
+  max-width: 240px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  z-index: 1000;
+  padding: 8px 0;
+  top: 100%;
+  left: 0;
+  margin-top: 8px;
+  max-height: 320px;
+  overflow-y: auto;
+  right: auto;
+}
+
+.language-selector:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content p {
+  padding: 8px 12px;
+  margin: 0;
+  font-size: 10px;
+  font-weight: 700;
+  color: #1F2937;
+  letter-spacing: 0.5px;
+}
+
+.dropdown-content label {
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+  cursor: pointer;
+  color: #333;
+  font-size: 11px;
+  transition: background-color 0.2s;
+  margin: 0;
+}
+
+.dropdown-content label:hover {
+  background-color: #f3f4f6;
+}
+
+.dropdown-content input[type="radio"] {
+  margin-right: 8px;
+  cursor: pointer;
+  accent-color: #FF9500;
+}
+
+.footer-text {
+  font-size: 9px;
+  color: #888;
+  padding: 8px 12px;
+  margin-top: 8px;
+  border-top: 1px solid #e5e7eb;
+  text-align: left;
+  line-height: 1.3;
+}
+
+.footer-text a {
+  color: #0073bb;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline;
+}
+
+.footer-text a:hover {
+  text-decoration: underline;
+}
+
+.footer-text strong {
+  color: #1F2937;
+  font-weight: 600;
+}
+
+.return-menue,
+.cart,
+.account-section {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  margin-right: 0;
+  padding: 4px 8px;
+  flex-shrink: 0;
+}
+
+.return-menue a,
+.cart a,
+.account-section button {
+  color: white;
+  text-decoration: none;
+  margin-left: 4px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.return-menue a:hover,
+.cart a:hover,
+.account-section button:hover {
+  color: #febd69;
+}
+
+.cart {
+  margin-right: 0;
+}
+
+.language-selector:hover,
+.account-section:hover,
+.return-menue:hover,
+.cart:hover {
+  border: 1px solid #fff;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+  transition: all 0.2s ease;
+}
+
+.account-section .dropdown-menu {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.25s ease;
+  visibility: hidden;
+  z-index: 1001;
+}
+
+.account-section:hover .dropdown-menu {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.account-section .btn {
+  position: relative;
+  z-index: 3;
+  font-size: 11px;
+  padding: 0;
+}
+
+.account-section:hover {
+  border: none;
+}
+
+.account-section .btn:hover,
+.account-section .btn:focus,
+.account-section .btn:active {
+  box-shadow: none !important;
+  outline: none !important;
+  filter: none !important;
+  border: none;
+  background-color: transparent;
+  transition: all 0.2s ease;
+}
+
+/* ============================================
+   SINGLE WIDE SLIDING CARD - Mobile optimized
+   ============================================ */
+.card-row-single {
+  padding: 0 12px;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 2;
+}
+
+.wide-slider-card {
+  min-height: auto;
+}
+
+.slider-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.slider-track {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  flex: 1;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.slider-track::-webkit-scrollbar {
+  height: 4px;
+}
+
+.slider-track::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 2px;
+}
+
+.slider-card {
+  flex: 0 0 calc(50% - 4px);
+  max-width: calc(50% - 4px);
+  text-align: left;
+  cursor: pointer;
+  min-width: 100px;
+}
+
+.slider-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 2px;
+}
+
+.slider-card span {
+  display: block;
+  font-size: 11px;
+  color: #0f1111;
+  margin-top: 6px;
+  line-height: 1.2;
+}
+
+.slider-card:hover span {
+  color: #c7511f;
+}
+
+.slider-arrow {
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #d5d9d9;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  font-size: 14px;
+  color: #0f1111;
+  padding: 0;
+  transition: all 0.2s ease;
+  min-width: 32px;
+  min-height: 32px;
+}
+
+.slider-arrow:hover {
+  background-color: #f0f2f2;
+}
+
+.slider-arrow:active {
+  transform: scale(0.95);
+}
+
+.slider-arrow[disabled] {
+  opacity: 0.35;
+  cursor: default;
+  pointer-events: none;
+}
+
+#no-results {
+  display: none;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding: 16px;
+  color: #c7511f;
+  font-size: 16px;
+  background-color: #fff;
+  border: 2px solid #c7511f;
+  border-radius: 4px;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - Tablet & Desktop
+   ============================================ */
+
+/* Tablet: 576px and up */
+@media (min-width: 576px) {
+  .navbar {
+    padding: 12px 16px;
+    min-height: 70px;
+    gap: 12px;
+  }
+
+  .shopindia-logo-img {
+    height: 60px;
+    width: 240px;
+  }
+
+  .search-bar {
+    flex-basis: auto;
+    flex-grow: 1;
+    max-width: 400px;
+    margin-right: 12px;
+    order: 1;
+  }
+
+  .d-flex.align-items-center.ms-auto {
+    flex-basis: auto;
+    order: 3;
+  }
+
+  .delivery-info {
+    display: flex;
+  }
+
+  .delivery-info small {
+    font-size: 11px;
+  }
+
+  .delivery-info span {
+    font-size: 13px;
+  }
+
+  .card-row {
+    padding: 0 16px;
+    margin-top: -50px;
+    gap: 12px;
+  }
+
+  .product-card {
+    flex: 1 1 calc(50% - 12px);
+  }
+
+  .carousel-item img {
+    height: 200px;
+  }
+
+  .slider-card {
+    flex: 0 0 calc(33.333% - 6px);
+    max-width: calc(33.333% - 6px);
+  }
+
+  .filter-section {
+    padding: 14px 16px;
+  }
+
+  .card-row-single {
+    padding: 0 16px;
+  }
+
+  .slider-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+}
+
+/* Large Tablet: 768px and up */
+@media (min-width: 768px) {
+  .navbar {
+    padding: 12px 20px;
+    min-height: 80px;
+  }
+
+  .shopindia-logo-img {
+    height: 70px;
+    width: 280px;
+  }
+
+  .card-row {
+    padding: 0 20px;
+    margin-top: -70px;
+    gap: 14px;
+  }
+
+  .product-card {
+    flex: 1 1 calc(50% - 14px);
+    padding: 14px;
+  }
+
+  .product-card h2 {
+    font-size: 16px;
+  }
+
+  .carousel-item img {
+    height: 250px;
+  }
+
+  .slider-card {
+    flex: 0 0 calc(25% - 6px);
+    max-width: calc(25% - 6px);
+  }
+
+  .slider-card span {
+    font-size: 12px;
+  }
+
+  .filter-section {
+    padding: 16px 20px;
+  }
+
+  .filter-section h4 {
+    font-size: 14px;
   }
 
   .filter-btn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    font-size: 13px;
+    padding: 8px 14px;
+  }
+
+  .card-row-single {
+    padding: 0 20px;
+  }
+
+  .footer-links {
+    flex-direction: row;
     justify-content: center;
-    gap: 4px;
-    height: 64px;
-    border-radius: 12px;
-    border: none;
-    font-size: 10px;
-    font-weight: 600;
-    white-space: normal;
-    text-align: center;
-    padding: 4px;
+    gap: 60px;
+    padding: 30px 20px;
+    text-align: left;
   }
 
-  .filter-btn:nth-child(1) {
-    background-color: #dbe9ff;
-    color: #1a2b4d;
+  .footer-column h4 {
+    font-size: 15px;
   }
 
-  .filter-btn:nth-child(2) {
-    background-color: #e3f5e1;
-    color: #1e4620;
+  .footer-column a {
+    font-size: 13px;
   }
 
-  .filter-btn:nth-child(3) {
-    background-color: #ffe3e3;
-    color: #5c1a1a;
-  }
-
-  .filter-btn:nth-child(4) {
-    background-color: #e6f0ff;
-    color: #0b3d91;
-  }
-
-  .filter-btn.active {
-    outline: 2px solid #232f3e;
+  .footer-bottom {
+    padding: 18px;
+    font-size: 12px;
   }
 }
 
-/* ============================================
-   BOTTOM TAB BAR (mobile only)
-   ============================================ */
-.bottom-nav {
-  display: none;
-}
-
-@media (max-width: 767.98px) {
-  .bottom-nav {
-    display: flex;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #fff;
-    border-top: 1px solid #e0e0e0;
-    z-index: 1000;
-    padding: 6px 0;
+/* Desktop: 992px and up */
+@media (min-width: 992px) {
+  .navbar {
+    flex-wrap: nowrap;
+    padding: 12px 24px;
+    height: auto;
+    min-height: 100px;
+    gap: 15px;
   }
 
-  .bottom-nav-item {
+  .shopindia-logo-img {
+    height: 90px;
+    width: 320px;
+  }
+
+  .container-fluid {
+    flex-wrap: nowrap;
+  }
+
+  .search-bar {
+    flex-basis: auto;
+    max-width: 600px;
+    margin-right: 16px;
+    order: 0;
+    flex-grow: 1;
+  }
+
+  .d-flex.align-items-center.ms-auto {
+    flex-basis: auto;
+    order: 0;
+    flex-wrap: nowrap;
+  }
+
+  .navbar-brand {
+    margin-right: 20px;
+  }
+
+  .search-bar input {
+    height: 38px;
+    font-size: 13px;
+    padding: 0 12px;
+  }
+
+  .search-bar button {
+    height: 40px;
+  }
+
+  .return-menue,
+  .cart,
+  .account-section {
+    margin-right: 16px;
+    padding: 8px 12px;
+  }
+
+  .return-menue a,
+  .cart a,
+  .account-section button {
+    margin-left: 6px;
+    font-size: 13px;
+  }
+
+  .language-selector img {
+    height: 24px;
+    width: 32px;
+  }
+
+  .card-row {
+    padding: 0 24px;
+    margin-top: -120px;
+    gap: 14px;
+    flex-wrap: nowrap;
+  }
+
+  .product-card {
     flex: 1;
+    min-height: 340px;
+    padding: 14px;
+  }
+
+  .product-card h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .carousel-item img {
+    height: 350px;
+  }
+
+  .slider-card {
+    flex: 0 0 calc(25% - 6px);
+    max-width: calc(25% - 6px);
+  }
+
+  .slider-card span {
+    font-size: 12px;
+  }
+
+  .filter-section {
+    padding: 16px 24px;
+  }
+
+  .filter-section h4 {
+    font-size: 14px;
+  }
+
+  .filter-btn {
+    font-size: 13px;
+    padding: 8px 16px;
+  }
+
+  .card-row-single {
+    padding: 0 24px;
+  }
+
+  .slider-arrow {
+    width: 34px;
+    height: 34px;
+    font-size: 16px;
+  }
+
+  .footer-links {
+    gap: 80px;
+    padding: 40px 24px;
+  }
+
+  .footer-column h4 {
+    font-size: 16px;
+  }
+
+  .footer-column a {
+    font-size: 14px;
+  }
+
+  .footer-bottom {
+    padding: 20px;
+    font-size: 12px;
+  }
+
+  .delivery-info {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2px;
-    color: #333;
-    text-decoration: none;
-    font-size: 10px;
-    position: relative;
   }
 
-  .bottom-nav-item i {
-    font-size: 20px;
+  .delivery-info small {
+    color: #ccc;
+    font-size: 12px;
   }
 
-  .bottom-nav-badge {
-    position: absolute;
-    top: -2px;
-    right: 22%;
-    background-color: red;
-    color: white;
-    border-radius: 50%;
-    width: 16px;
-    height: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 9px;
-    font-weight: bold;
+  .delivery-info span {
+    font-size: 14px;
+    font-weight: 600;
+  }
+}
+
+/* Large Desktop: 1200px and up */
+@media (min-width: 1200px) {
+  .navbar {
+    min-height: 100px;
   }
 
-  /* Add bottom padding to page so content isn't hidden behind the fixed bar */
-  .page-content {
-    padding-bottom: 70px;
+  .shopindia-logo-img {
+    height: 100px;
+    width: 350px;
+  }
+
+  .card-row {
+    margin-top: -120px;
   }
 }

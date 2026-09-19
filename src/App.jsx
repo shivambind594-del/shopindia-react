@@ -33,26 +33,26 @@ function App() {
       <FilterBar activeCategory={activeCategory} onCategoryChange={setActiveCategory} />
       <Carousel />
 
- <main className="page-content">
-  <PromoCards />
+      <main className="page-content">
+        <PromoCards />
 
-  <ProductSlider
-    title="Up to 40% off | Must-Have Kitchen Appliances"
-    products={kitchenProducts}
-    onAddToCart={addToCart}
-  />
-  <ProductSlider
-    title="Up to 70% off | Bestselling SmartWatches"
-    products={watchProducts}
-    onAddToCart={addToCart}
-  />
+        <ProductSlider
+          title="Up to 40% off | Must-Have Kitchen Appliances"
+          products={kitchenProducts}
+          onAddToCart={addToCart}
+        />
+        <ProductSlider
+          title="Up to 70% off | Bestselling SmartWatches"
+          products={watchProducts}
+          onAddToCart={addToCart}
+        />
 
-  {noResults && (
-    <p style={{ textAlign: 'center', fontWeight: 600, marginTop: '20px' }}>
-      No results found
-    </p>
-  )}
-</main>
+        {noResults && (
+          <p style={{ textAlign: 'center', fontWeight: 600, marginTop: '20px' }}>
+            No results found
+          </p>
+        )}
+      </main>
 
       <Footer />
     </>

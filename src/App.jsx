@@ -6,7 +6,7 @@ import Carousel from './components/Carousel'
 import ProductSlider from './components/ProductSlider'
 import Footer from './components/Footer'
 import useCart from './hooks/useCart'
-import { products } from './data/products'
+import { products } from './Data/products'
 import './App.css'
 
 function App() {

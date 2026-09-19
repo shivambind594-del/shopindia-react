@@ -1,14 +1,13 @@
-import { useState } from 'react'
+function Navbar({ cartCount, searchText, onSearchChange }) {
 
-export default function Navbar({ cartCount, searchText, onSearchChange }) {
   return (
     <nav className="navbar navbar-expand-lg">
-      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent"aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
 
       <div
-        className="collapse navbar-collapse container-fluid  align-items-center justify-content-between"
+        className="collapse navbar-collapse container-fluid d-flex align-items-center justify-content-between"
         id="navbarContent"
       >
         <a className="navbar-brand" href="https://www.shopindia.com" target="_blank" rel="noreferrer">
@@ -88,14 +87,14 @@ export default function Navbar({ cartCount, searchText, onSearchChange }) {
         </a>
 
         <form className="search-bar mx-3 flex-grow-1" role="search">
-          <input
-            type="search"
-            id="search"
-            placeholder="Search Shop India.in"
-            aria-label="Search"
-            value={searchText}
-            onChange={(e) => onSearchChange(e.target.value)}
-          />
+           <input
+     type="search"
+     id="search"
+     placeholder="Search Shop India.in"
+     aria-label="Search"
+     value={searchText}
+     onChange={(e) => onSearchChange(e.target.value)}
+   />
           <button type="submit">
             <i className="bi bi-search"></i>
           </button>
@@ -210,3 +209,5 @@ export default function Navbar({ cartCount, searchText, onSearchChange }) {
     </nav>
   )
 }
+
+export default Navbar

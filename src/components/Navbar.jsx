@@ -3,69 +3,69 @@ function Navbar({ cartCount, searchText, onSearchChange }) {
     <nav className="navbar navbar-expand-lg navbar-dark shopindia-navbar">
       <div className="container-fluid">
 
-        {/* Logo + Delivery */}
-        <a className="navbar-brand d-flex align-items-center" href="#" onClick={(e) => e.preventDefault()}>
-          <div className="shopindia-logo-img">
-            <svg viewBox="0 0 500 150" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="orangeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#FF9500" stopOpacity="1" />
-                  <stop offset="100%" stopColor="#FF6B35" stopOpacity="1" />
-                </linearGradient>
-              </defs>
-              <circle cx="75" cy="75" r="55" fill="url(#orangeGradient)" />
-              <g transform="translate(75, 75)">
-                <path d="M -22 -15 L -18 -24 L 18 -24 L 22 -15 L 22 22 Q 22 28 16 28 L -16 28 Q -22 28 -22 22 Z" fill="white" />
-                <path d="M -14 -24 Q 0 -36 14 -24" fill="none" stroke="white" strokeWidth="4" strokeLinecap="round" />
-                <line x1="-18" y1="-15" x2="18" y2="-15" stroke="white" strokeWidth="2.5" opacity="0.9" />
-                <ellipse cx="-6" cy="4" rx="3" ry="7" fill="white" opacity="0.45" />
-              </g>
-              <text x="160" y="65" fontFamily="Arial, sans-serif" fontSize="56" fontWeight="900" fill="#1F2937" letterSpacing="2">SHOP</text>
-              <text x="160" y="115" fontFamily="Arial, sans-serif" fontSize="48" fontWeight="800" fill="#FF9500" letterSpacing="2">INDIA</text>
-              <line x1="160" y1="125" x2="450" y2="125" stroke="#FF9500" strokeWidth="4" strokeLinecap="round" />
-            </svg>
-          </div>
-          <div className="delivery-info d-none d-md-block ms-2">
-            <small>Delivering to</small>
-            <div className="fw-bold">Vadodara 390007</div>
-          </div>
-        </a>
+        {/* Row 1: Logo + Hamburger */}
+        <div className="navbar-top-row d-flex align-items-center w-100">
+          <a className="navbar-brand d-flex align-items-center" href="#" onClick={(e) => e.preventDefault()}>
+            <div className="shopindia-logo-img">
+              <svg viewBox="0 0 500 150" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="orangeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#FF9500" stopOpacity="1" />
+                    <stop offset="100%" stopColor="#FF6B35" stopOpacity="1" />
+                  </linearGradient>
+                </defs>
+                <circle cx="75" cy="75" r="55" fill="url(#orangeGradient)" />
+                <g transform="translate(75, 75)">
+                  <path d="M -22 -15 L -18 -24 L 18 -24 L 22 -15 L 22 22 Q 22 28 16 28 L -16 28 Q -22 28 -22 22 Z" fill="white" />
+                  <path d="M -14 -24 Q 0 -36 14 -24" fill="none" stroke="white" strokeWidth="4" strokeLinecap="round" />
+                  <line x1="-18" y1="-15" x2="18" y2="-15" stroke="white" strokeWidth="2.5" opacity="0.9" />
+                  <ellipse cx="-6" cy="4" rx="3" ry="7" fill="white" opacity="0.45" />
+                </g>
+                <text x="160" y="65" fontFamily="Arial, sans-serif" fontSize="56" fontWeight="900" fill="#1F2937" letterSpacing="2">SHOP</text>
+                <text x="160" y="115" fontFamily="Arial, sans-serif" fontSize="48" fontWeight="800" fill="#FF9500" letterSpacing="2">INDIA</text>
+                <line x1="160" y1="125" x2="450" y2="125" stroke="#FF9500" strokeWidth="4" strokeLinecap="round" />
+              </svg>
+            </div>
+            <div className="delivery-info d-none d-md-block ms-2">
+              <small>Delivering to</small>
+              <div className="fw-bold">Vadodara 390007</div>
+            </div>
+          </a>
 
-        {/* Hamburger toggle (mobile only) */}
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#mainNav"
-          aria-controls="mainNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-
-        {/* Collapsible content */}
-        <div className="collapse navbar-collapse" id="mainNav">
-          {/* Search */}
-          <form
-            className="d-flex flex-grow-1 my-2 my-lg-0 mx-lg-3 search-bar"
-            role="search"
-            onSubmit={(e) => e.preventDefault()}
+          <button
+            className="navbar-toggler ms-auto"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNav"
+            aria-controls="mainNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
           >
-            <input
-              className="form-control"
-              type="search"
-              placeholder="Search Shop India.in"
-              aria-label="Search"
-              value={searchText}
-              onChange={(e) => onSearchChange(e.target.value)}
-            />
-            <button className="btn btn-warning" type="submit">
-              <i className="bi bi-search"></i>
-            </button>
-          </form>
+            <span className="navbar-toggler-icon"></span>
+          </button>
+        </div>
 
-          {/* Right-side nav items */}
+        {/* Row 2: Search bar — ALWAYS visible */}
+        <form
+          className="search-bar d-flex w-100 my-2"
+          role="search"
+          onSubmit={(e) => e.preventDefault()}
+        >
+          <input
+            className="form-control"
+            type="search"
+            placeholder="Search Shop India.in"
+            aria-label="Search"
+            value={searchText}
+            onChange={(e) => onSearchChange(e.target.value)}
+          />
+          <button className="btn btn-warning" type="submit">
+            <i className="bi bi-search"></i>
+          </button>
+        </form>
+
+        {/* Row 3: Collapsible nav items (hamburger toggles this) */}
+        <div className="collapse navbar-collapse" id="mainNav">
           <ul className="navbar-nav ms-auto align-items-lg-center">
             <li className="nav-item dropdown">
               <a

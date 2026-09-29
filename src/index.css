@@ -79,6 +79,56 @@ body {
 }
 
 /* ============================================
+   NAVBAR LAYOUT — mobile + desktop
+   ============================================ */
+.navbar-top-row {
+  gap: 8px;
+}
+
+/* Desktop: search bar sits inline */
+@media (min-width: 992px) {
+  .shopindia-navbar .container-fluid {
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .navbar-top-row {
+    width: auto !important;
+    flex-grow: 0;
+  }
+  .search-bar {
+    flex: 1;
+    max-width: 600px;
+    margin: 0 16px !important;
+    width: auto !important;
+  }
+  .navbar-collapse {
+    flex-grow: 0;
+  }
+}
+
+/* Mobile: search bar full width, stacked */
+@media (max-width: 991px) {
+  .shopindia-navbar .container-fluid {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  .navbar-top-row {
+    width: 100%;
+  }
+  .search-bar {
+    width: 100%;
+    margin: 0 !important;
+  }
+  .navbar-collapse {
+    width: 100%;
+  }
+  .navbar-nav {
+    text-align: left;
+  }
+}
+
+/* ============================================
    FILTER SECTION
    ============================================ */
 .filter-section {
@@ -322,6 +372,13 @@ body {
 
 .slider-arrow:hover {
   background-color: #f0f2f2;
+}
+
+/* Hide slider arrows on mobile — swipe works better on touch */
+@media (max-width: 767px) {
+  .slider-arrow {
+    display: none;
+  }
 }
 
 /* ============================================

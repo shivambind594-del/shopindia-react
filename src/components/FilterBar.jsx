@@ -9,11 +9,11 @@ function FilterBar({ activeCategory, onCategoryChange }) {
   return (
     <div className="filter-section">
       <h4>Filter by Category</h4>
-      <div className="filter-buttons">
+      <div className="d-flex flex-wrap gap-2">
         {categories.map((cat) => (
           <button
             key={cat.key}
-            className={`filter-btn ${activeCategory === cat.key ? 'active' : ''}`}
+            className={`btn btn-sm rounded-pill ${activeCategory === cat.key ? 'btn-dark' : 'btn-outline-secondary'}`}
             onClick={() => onCategoryChange(cat.key)}
           >
             {cat.label}

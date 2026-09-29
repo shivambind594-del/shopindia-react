@@ -1,148 +1,117 @@
 function Navbar({ cartCount, searchText, onSearchChange }) {
-
   return (
-    <nav className="navbar navbar-expand-lg">
-      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent"aria-expanded="false" aria-label="Toggle navigation">
-        <span className="navbar-toggler-icon"></span>
-      </button>
+    <nav className="navbar navbar-expand-lg navbar-dark shopindia-navbar">
+      <div className="container-fluid">
 
-      <div
-        className="collapse navbar-collapse container-fluid d-flex align-items-center justify-content-between"
-        id="navbarContent"
-      >
-        <a className="navbar-brand" href="https://www.shopindia.com" target="_blank" rel="noreferrer">
+        {/* Logo + Delivery */}
+        <a className="navbar-brand d-flex align-items-center" href="#" onClick={(e) => e.preventDefault()}>
           <div className="shopindia-logo-img">
             <svg viewBox="0 0 500 150" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <linearGradient id="orangeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style={{ stopColor: '#FF9500', stopOpacity: 1 }} />
-                  <stop offset="100%" style={{ stopColor: '#FF6B35', stopOpacity: 1 }} />
-                </linearGradient>
-                <linearGradient id="blueGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" style={{ stopColor: '#1E3A8A', stopOpacity: 1 }} />
-                  <stop offset="100%" style={{ stopColor: '#1F2937', stopOpacity: 1 }} />
+                  <stop offset="0%" stopColor="#FF9500" stopOpacity="1" />
+                  <stop offset="100%" stopColor="#FF6B35" stopOpacity="1" />
                 </linearGradient>
               </defs>
-              <circle
-                cx="75"
-                cy="75"
-                r="55"
-                fill="url(#orangeGradient)"
-                style={{ filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.2))' }}
-              />
+              <circle cx="75" cy="75" r="55" fill="url(#orangeGradient)" />
               <g transform="translate(75, 75)">
-                <path
-                  d="M -22 -15 L -18 -24 L 18 -24 L 22 -15 L 22 22 Q 22 28 16 28 L -16 28 Q -22 28 -22 22 Z"
-                  fill="white"
-                  stroke="none"
-                />
-                <path
-                  d="M -14 -24 Q 0 -36 14 -24"
-                  fill="none"
-                  stroke="white"
-                  strokeWidth="4"
-                  strokeLinecap="round"
-                />
+                <path d="M -22 -15 L -18 -24 L 18 -24 L 22 -15 L 22 22 Q 22 28 16 28 L -16 28 Q -22 28 -22 22 Z" fill="white" />
+                <path d="M -14 -24 Q 0 -36 14 -24" fill="none" stroke="white" strokeWidth="4" strokeLinecap="round" />
                 <line x1="-18" y1="-15" x2="18" y2="-15" stroke="white" strokeWidth="2.5" opacity="0.9" />
                 <ellipse cx="-6" cy="4" rx="3" ry="7" fill="white" opacity="0.45" />
               </g>
-              <text
-                x="160"
-                y="65"
-                fontFamily="Arial, Helvetica, sans-serif"
-                fontSize="56"
-                fontWeight="900"
-                fill="url(#blueGradient)"
-                letterSpacing="2"
-              >
-                SHOP
-              </text>
-              <text
-                x="160"
-                y="115"
-                fontFamily="Arial, Helvetica, sans-serif"
-                fontSize="48"
-                fontWeight="800"
-                fill="#FF9500"
-                letterSpacing="2"
-              >
-                INDIA
-              </text>
-              <line
-                x1="160"
-                y1="125"
-                x2="450"
-                y2="125"
-                stroke="#FF9500"
-                strokeWidth="4"
-                strokeLinecap="round"
-                opacity="0.95"
-              />
+              <text x="160" y="65" fontFamily="Arial, sans-serif" fontSize="56" fontWeight="900" fill="#1F2937" letterSpacing="2">SHOP</text>
+              <text x="160" y="115" fontFamily="Arial, sans-serif" fontSize="48" fontWeight="800" fill="#FF9500" letterSpacing="2">INDIA</text>
+              <line x1="160" y1="125" x2="450" y2="125" stroke="#FF9500" strokeWidth="4" strokeLinecap="round" />
             </svg>
           </div>
-          <div className="delivery-info">
+          <div className="delivery-info d-none d-md-block ms-2">
             <small>Delivering to</small>
-            <span className="fw-bold">Vadodara 390007</span>
+            <div className="fw-bold">Vadodara 390007</div>
           </div>
         </a>
 
-        <form className="search-bar mx-3 flex-grow-1" role="search">
-           <input
-     type="search"
-     id="search"
-     placeholder="Search Shop India.in"
-     aria-label="Search"
-     value={searchText}
-     onChange={(e) => onSearchChange(e.target.value)}
-   />
-          <button type="submit">
-            <i className="bi bi-search"></i>
-          </button>
-        </form>
+        {/* Hamburger toggle (mobile only) */}
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+          aria-controls="mainNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
 
-        <div className="d-flex align-items-center ms-auto">
-          <div className="language-selector me-2">
-            <img src="https://flagcdn.com/w32/in.png" alt="India Flag" className="flag-logo" />
-            <button className="dropdown-btn">IN EN</button>
-            <div className="dropdown-content">
-              <p><strong>CHANGE LANGUAGE</strong></p>
-              <label><input type="radio" name="lang" defaultChecked /> English-EN</label>
-              <label><input type="radio" name="lang" /> हिन्दी-HI</label>
-              <label><input type="radio" name="lang" /> தமிழ்-TA</label>
-              <label><input type="radio" name="lang" /> తెలుగు-TE</label>
-              <label><input type="radio" name="lang" /> ಕನ್ನಡ-KN</label>
-              <label><input type="radio" name="lang" /> മലയാളം-ML</label>
-              <label><input type="radio" name="lang" /> বাংলা-BN</label>
-              <label><input type="radio" name="lang" /> मराठी-MR</label>
-              <div className="footer-text">
-                You are Shopping on <strong>Shop India.in</strong>
-                <br />
-                <a href="#">Change country/region</a>
-              </div>
-            </div>
-          </div>
+        {/* Collapsible content */}
+        <div className="collapse navbar-collapse" id="mainNav">
+          {/* Search */}
+          <form
+            className="d-flex flex-grow-1 my-2 my-lg-0 mx-lg-3 search-bar"
+            role="search"
+            onSubmit={(e) => e.preventDefault()}
+          >
+            <input
+              className="form-control"
+              type="search"
+              placeholder="Search Shop India.in"
+              aria-label="Search"
+              value={searchText}
+              onChange={(e) => onSearchChange(e.target.value)}
+            />
+            <button className="btn btn-warning" type="submit">
+              <i className="bi bi-search"></i>
+            </button>
+          </form>
 
-          <div className="account-section me-2">
-            <div className="dropdown">
-              <button
-                className="btn text-white dropdown-toggle"
-                type="button"
-                id="accountDropdown"
+          {/* Right-side nav items */}
+          <ul className="navbar-nav ms-auto align-items-lg-center">
+            <li className="nav-item dropdown">
+              <a
+                className="nav-link dropdown-toggle"
+                href="#"
+                role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
-                style={{ lineHeight: 1.2 }}
+              >
+                <img
+                  src="https://flagcdn.com/w32/in.png"
+                  alt="India Flag"
+                  style={{ height: '16px', width: '22px', marginRight: '4px' }}
+                />
+                IN EN
+              </a>
+              <ul className="dropdown-menu p-2">
+                <li><p className="fw-bold small px-2 mb-1">CHANGE LANGUAGE</p></li>
+                <li><a className="dropdown-item" href="#">English-EN</a></li>
+                <li><a className="dropdown-item" href="#">हिन्दी-HI</a></li>
+                <li><a className="dropdown-item" href="#">தமிழ்-TA</a></li>
+                <li><a className="dropdown-item" href="#">తెలుగు-TE</a></li>
+                <li><a className="dropdown-item" href="#">ಕನ್ನಡ-KN</a></li>
+                <li><a className="dropdown-item" href="#">മലയാളം-ML</a></li>
+                <li><a className="dropdown-item" href="#">বাংলা-BN</a></li>
+                <li><a className="dropdown-item" href="#">मराठी-MR</a></li>
+              </ul>
+            </li>
+
+            <li className="nav-item dropdown">
+              <a
+                className="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
               >
                 <small>Hello, sign in</small>
                 <br />
                 <strong>Account & Lists</strong>
-              </button>
-              <ul className="dropdown-menu p-3" aria-labelledby="accountDropdown" style={{ minWidth: '420px' }}>
+              </a>
+              <ul className="dropdown-menu p-3" style={{ minWidth: '340px' }}>
                 <div className="text-center mb-3">
                   <button className="btn btn-warning fw-bold">Sign in</button>
                   <br />
-                  <small>
-                    New customer? <a href="#" className="text-primary">Start here</a>
-                  </small>
+                  <small>New customer? <a href="#">Start here</a></small>
                 </div>
                 <hr />
                 <div className="row">
@@ -152,8 +121,6 @@ function Navbar({ cartCount, searchText, onSearchChange }) {
                       <li><a href="#" className="dropdown-item">Create a Wish List</a></li>
                       <li><a href="#" className="dropdown-item">Wish from Any Website</a></li>
                       <li><a href="#" className="dropdown-item">Baby Wishlist</a></li>
-                      <li><a href="#" className="dropdown-item">Discover Your Style</a></li>
-                      <li><a href="#" className="dropdown-item">Explore Showroom</a></li>
                     </ul>
                   </div>
                   <div className="col-6">
@@ -162,48 +129,28 @@ function Navbar({ cartCount, searchText, onSearchChange }) {
                       <li><a href="#" className="dropdown-item">Your Account</a></li>
                       <li><a href="#" className="dropdown-item">Your Orders</a></li>
                       <li><a href="#" className="dropdown-item">Your Wish List</a></li>
-                      <li><a href="#" className="dropdown-item">Your Recommendations</a></li>
-                      <li><a href="#" className="dropdown-item">Your Seller Account</a></li>
-                      <li><a href="#" className="dropdown-item">Manage Your Content<br />and Devices</a></li>
                     </ul>
                   </div>
                 </div>
               </ul>
-            </div>
-          </div>
+            </li>
 
-          <div className="return-menue ms-2">
-            <a href="#" className="text-white" style={{ lineHeight: 1.2 }}>
-              <small>Returns</small>
-              <br />
-              <strong>& Orders</strong>
-            </a>
-          </div>
+            <li className="nav-item">
+              <a className="nav-link" href="#">
+                <small>Returns</small>
+                <br />
+                <strong>& Orders</strong>
+              </a>
+            </li>
 
-          <div className="cart ms-2">
-            <a href="#" className="text-white d-flex align-items-center">
-              <i className="bi bi-cart-fill fs-4 me-1"></i>
-              <strong>Cart</strong>
-              <span
-                className="cart-count"
-                style={{
-                  background: 'red',
-                  color: 'white',
-                  borderRadius: '50%',
-                  width: '22px',
-                  height: '22px',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: '12px',
-                  fontWeight: 'bold',
-                  marginLeft: '8px',
-                }}
-              >
-                {cartCount}
-              </span>
-            </a>
-          </div>
+            <li className="nav-item">
+              <a className="nav-link d-flex align-items-center" href="#">
+                <i className="bi bi-cart-fill fs-5 me-1"></i>
+                <strong>Cart</strong>
+                <span className="cart-badge ms-1">{cartCount}</span>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
